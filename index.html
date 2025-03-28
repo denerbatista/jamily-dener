@@ -182,25 +182,52 @@
           background-size: cover;
         }
       }
+
+      .icone-musica {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 9999;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+      }
+
+      .icone-musica:hover {
+        background: rgba(255, 255, 255, 1);
+      }
     </style>
   </head>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       const audio = document.getElementById("musicaFundo");
+      const botaoMusica = document.getElementById("btnMusica");
 
-      // Desativa o mute e tenta tocar
       audio.muted = false;
 
-      const tocar = () => {
-        audio.play().catch(() => {
-          // se falhar, espera uma interação
-          document.body.addEventListener("click", () => audio.play(), {
-            once: true,
-          });
+      // Tenta tocar automaticamente ou aguarda interação
+      audio.play().catch(() => {
+        document.body.addEventListener("click", () => audio.play(), {
+          once: true,
         });
-      };
+      });
 
-      tocar();
+      botaoMusica.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          botaoMusica.textContent = "🔊";
+          botaoMusica.title = "Desativar música";
+        } else {
+          audio.pause();
+          botaoMusica.textContent = "🔇";
+          botaoMusica.title = "Ativar música";
+        }
+      });
     });
   </script>
 
@@ -209,6 +236,10 @@
       <source src="musica.mp3" type="audio/mpeg" />
       Seu navegador não suporta áudio.
     </audio>
+    <!-- Ícone de Música -->
+    <button id="btnMusica" class="icone-musica" title="Desativar música">
+      🔊
+    </button>
 
     <div class="convite">
       <img src="logo-dj.png" alt="Logo D & J" class="logo-img" />
