@@ -133,6 +133,26 @@
         font-size: 0.85rem;
       }
 
+      .petala {
+        position: fixed;
+        top: -50px;
+        width: 25px;
+        height: 25px;
+        background-image: url("petala.png"); /* pétala laranja */
+        background-size: cover;
+        opacity: 0.8;
+        pointer-events: none;
+        animation: cair linear;
+        z-index: 9999;
+      }
+
+      @keyframes cair {
+        to {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
       @media (max-width: 576px) {
         body {
           background: url("background.jpg") no-repeat center center;
@@ -353,6 +373,21 @@
 
       setInterval(atualizarContador, 1000);
       atualizarContador();
+
+      // Cria pétalas caindo
+      function criarPetala() {
+        const petala = document.createElement("div");
+        petala.classList.add("petala");
+        petala.style.left = Math.random() * 100 + "vw";
+        petala.style.animationDuration = 3 + Math.random() * 2 + "s";
+        document.body.appendChild(petala);
+
+        setTimeout(() => {
+          petala.remove();
+        }, 5000);
+      }
+
+      setInterval(criarPetala, 300);
     </script>
   </body>
 </html>
