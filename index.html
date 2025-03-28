@@ -184,8 +184,32 @@
       }
     </style>
   </head>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const audio = document.getElementById("musicaFundo");
+
+      // Desativa o mute e tenta tocar
+      audio.muted = false;
+
+      const tocar = () => {
+        audio.play().catch(() => {
+          // se falhar, espera uma interação
+          document.body.addEventListener("click", () => audio.play(), {
+            once: true,
+          });
+        });
+      };
+
+      tocar();
+    });
+  </script>
 
   <body>
+    <audio id="musicaFundo" autoplay loop>
+      <source src="musica.mp3" type="audio/mpeg" />
+      Seu navegador não suporta áudio.
+    </audio>
+
     <div class="convite">
       <img src="logo-dj.png" alt="Logo D & J" class="logo-img" />
       <p class="nomes">Jamily e Dener</p>
