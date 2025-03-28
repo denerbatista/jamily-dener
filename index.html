@@ -195,7 +195,7 @@
         cursor: pointer;
         z-index: 9999;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        transition: background 0.3s ease;
+        transition: opacity 0.5s ease;
       }
 
       .icone-musica:hover {
@@ -210,13 +210,14 @@
 
       audio.muted = false;
 
-      // Tenta tocar automaticamente ou aguarda interação
+      // Tocar música ou aguardar interação
       audio.play().catch(() => {
         document.body.addEventListener("click", () => audio.play(), {
           once: true,
         });
       });
 
+      // Alternar estado da música
       botaoMusica.addEventListener("click", () => {
         if (audio.paused) {
           audio.play();
@@ -227,6 +228,27 @@
           botaoMusica.textContent = "🔇";
           botaoMusica.title = "Ativar música";
         }
+      });
+
+      // Funções de exibir e ocultar
+      function esconderBotao() {
+        botaoMusica.style.opacity = "0";
+        botaoMusica.style.pointerEvents = "none";
+      }
+
+      function mostrarBotaoTemporariamente() {
+        botaoMusica.style.opacity = "1";
+        botaoMusica.style.pointerEvents = "auto";
+        clearTimeout(botaoMusica.timeout);
+        botaoMusica.timeout = setTimeout(esconderBotao, 5000);
+      }
+
+      // Primeira ocultação após 5s
+      setTimeout(esconderBotao, 5000);
+
+      // Mostrar ao rolar e esconder novamente
+      window.addEventListener("scroll", () => {
+        mostrarBotaoTemporariamente();
       });
     });
   </script>
