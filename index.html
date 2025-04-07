@@ -358,7 +358,7 @@
           <h5>Confirmação de Presença</h5>
           <iframe
             src="https://forms.gle/Z7ohnwQ3rz79Bdeo9"
-            style="width: 100%; height: 600px; border: none;"
+            style="width: 100%; height: 600px; border: none"
           ></iframe>
         </div>
       </div>
@@ -368,8 +368,21 @@
       <div class="modal-dialog">
         <div class="modal-content p-3 text-center">
           <h5>Chave Pix</h5>
-          <div id="qrcode"></div>
-          <p id="pix-key">casamento.jamilydener@pix.com</p>
+          <div id="qrcode" style="display: flex; justify-content: center; gap: 1rem; padding: 0.5rem;">
+            <p style="display: flex;  align-items: center;">
+              Chave PIX: (27) 99807-9104
+              <br />
+              Nome: Dener Gomes Batista
+              <br />
+              Tipo de Chave: Telefone
+              <br />
+              Banco: PicPay
+            </p>
+          </div>
+          <p id="pix-key" style="display: none">
+            00020126360014BR.GOV.BCB.PIX0114+55279980791045204000053039865802BR5919Dener
+            Gomes Batista6007Aracruz62160512PixDosNoivos6304C267
+          </p>
           <button class="btn btn-outline-primary w-100" onclick="copiarPix()">
             Copiar Pix
           </button>
@@ -405,7 +418,7 @@
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
     <script>
       new QRCode(document.getElementById("qrcode"), {
-        text: "casamento.jamilydener@pix.com",
+        text: "00020126360014BR.GOV.BCB.PIX0114+55279980791045204000053039865802BR5919Dener Gomes Batista6007Aracruz62160512PixDosNoivos6304C267",
         width: 150,
         height: 150,
         colorDark: "#000",
