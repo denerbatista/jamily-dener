@@ -651,7 +651,8 @@
       });
 
       function copiarPix() {
-        const pixKey = document.getElementById("pix-key").textContent;
+        // Remove todos os espaços em branco antes de copiar
+        const pixKey = document.getElementById("pix-key").textContent.replace(/\s/g, '');
         navigator.clipboard.writeText(pixKey).then(() => {
           alert("Chave Pix copiada com sucesso!");
         });
