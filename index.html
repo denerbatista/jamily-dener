@@ -209,7 +209,7 @@
       .icone-musica {
         position: fixed;
         top: 15px;
-        right: 15px;
+        left: 15px; /* Reposicionado para o lado esquerdo */
         font-size: 1.5rem;
         background: rgba(255, 255, 255, 0.8);
         border: none;
@@ -1217,6 +1217,17 @@
       var modalPagamentoEl = document.getElementById("modalPagamento");
       modalPagamentoEl.addEventListener("hidden.bs.modal", function () {
         document.getElementById("paymentIframe").src = "";
+      });
+
+      // Adiciona a função de abrir a imagem ampliada ao clicar nas imagens dos produtos
+      document.querySelectorAll("#presentesContainer .card-img-top").forEach((img) => {
+        img.style.cursor = "pointer";
+        img.addEventListener("click", function () {
+          const src = this.getAttribute("src");
+          document.getElementById("imagemAmpliada").setAttribute("src", src);
+          var modalImg = new bootstrap.Modal(document.getElementById("modalImagem"));
+          modalImg.show();
+        });
       });
     </script>
   </body>
