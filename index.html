@@ -145,7 +145,7 @@
         align-items: center;
         width: 100px;
         cursor: pointer;
-        box-shadow: #a85f3f 4px 2px 3px;
+        box-shadow: #a85f3f 2px 4px 3px;
       }
 
       /* Coloca o nome dos botões em negrito */
@@ -315,7 +315,7 @@
 
       <div class="botoes-com-legenda">
         <div class="botao-legenda">
-          <!-- Botão alterado para "Confirmação de Presença" -->
+          <!-- Botão para Confirmação de Presença -->
           <span
             class="btn-moldura"
             data-bs-toggle="modal"
@@ -325,14 +325,14 @@
           <small>Confirmação de Presença</small>
         </div>
         <div class="botao-legenda">
-          <!-- Botão alterado para "Pix Lua de Mel" -->
+          <!-- Botão para Vaguinha Lua de Mel -->
           <span
             class="btn-moldura"
             data-bs-toggle="modal"
             data-bs-target="#modalPix"
             >💝</span
           >
-          <small>Pix Lua de Mel</small>
+          <small>Vaguinha Lua de Mel</small>
         </div>
         <div class="botao-legenda">
           <span
@@ -403,12 +403,12 @@
       </div>
     </div>
 
-    <!-- Modal Pix Lua de Mel -->
+    <!-- Modal Vaguinha Lua de Mel -->
     <div class="modal fade" id="modalPix" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content p-3 text-center">
           <div class="modal-header">
-            <h5 class="modal-title">Pix Lua de Mel</h5>
+            <h5 class="modal-title">Vaguinha Lua de Mel</h5>
             <button
               type="button"
               class="btn-close"
@@ -418,9 +418,9 @@
           </div>
           <div class="modal-body">
             <p class="mb-2">
-              Utilize este Pix para contribuir com nossa lua de mel. O valor
-              enviado será convertido em crédito para experiências durante nossa
-              viagem e projetos futuros.
+              Contribua com nossa vaguinha de lua de mel! Você pode contribuir
+              via Pix ou com cartão de crédito sem juros. Se preferir, escolha o
+              valor que desejar e até divida em parcelas sem juros.
             </p>
             <div
               id="qrcode"
@@ -432,12 +432,9 @@
               "
             >
               <p style="display: flex; align-items: center">
-                Chave PIX: (27) 99807-9104
-                <br />
-                Nome: Dener Gomes Batista
-                <br />
-                Tipo de Chave: Telefone
-                <br />
+                Chave PIX: (27) 99807-9104<br />
+                Nome: Dener Gomes Batista<br />
+                Tipo de Chave: Telefone<br />
                 Banco: PicPay
               </p>
             </div>
@@ -448,6 +445,15 @@
             <button class="btn btn-outline-primary w-100" onclick="copiarPix()">
               Copiar Pix
             </button>
+            <a
+              href="#"
+              class="btn btn-outline-secondary w-100 mt-2 payment-link"
+              data-payment-url="https://link.mercadopago.com.br/jamilydener"
+              data-bs-toggle="modal"
+              data-bs-target="#modalPagamento"
+            >
+              Contribuir com Cartão
+            </a>
           </div>
         </div>
       </div>
