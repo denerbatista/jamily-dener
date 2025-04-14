@@ -225,6 +225,15 @@
         background: rgba(255, 255, 255, 1);
       }
 
+      /* Em dispositivos móveis, reposiciona o botão de áudio para a parte inferior esquerda para evitar conflito com o botão de fechar dos modais */
+      @media (max-width: 576px) {
+        .icone-musica {
+          top: auto;
+          bottom: 15px;
+          left: 15px;
+        }
+      }
+
       /* Padroniza o tamanho das imagens dos cards na lista de presentes */
       #presentesContainer .card-img-top {
         height: 200px;
@@ -429,8 +438,7 @@
             class="btn-moldura"
             data-bs-toggle="modal"
             data-bs-target="#modalPresenca"
-            >🎟️</span
-          >
+            >🎟️</span>
           <small>Confirmação de Presença</small>
         </div>
         <div class="botao-legenda">
@@ -439,8 +447,7 @@
             class="btn-moldura"
             data-bs-toggle="modal"
             data-bs-target="#modalPix"
-            >💝</span
-          >
+            >💝</span>
           <small>Vaguinha Lua de Mel</small>
         </div>
         <div class="botao-legenda">
@@ -448,8 +455,7 @@
             class="btn-moldura"
             data-bs-toggle="modal"
             data-bs-target="#modalMapa"
-            >📍</span
-          >
+            >📍</span>
           <small>Local</small>
         </div>
         <div class="botao-legenda">
@@ -457,8 +463,7 @@
             class="btn-moldura"
             data-bs-toggle="modal"
             data-bs-target="#modalLista"
-            >🎁</span
-          >
+            >🎁</span>
           <small>Presentes</small>
         </div>
       </div>
@@ -609,24 +614,18 @@
             <div class="filtros my-3">
               <div class="row">
                 <div class="col-md-6">
-                  <label for="categoriaFiltro" class="form-label"
-                    >Categoria:</label
-                  >
+                  <label for="categoriaFiltro" class="form-label">Categoria:</label>
                   <select id="categoriaFiltro" class="form-select">
                     <option value="todos" selected>Todos</option>
                     <option value="eletrodomesticos">Eletrodomésticos</option>
                     <option value="utensilios">Utensílios de Cozinha</option>
                     <option value="cama-mesa-banho">Cama, Mesa e Banho</option>
                     <option value="decoracao">Decoração</option>
-                    <option value="eletro-maiores">
-                      Eletrodomésticos Maiores
-                    </option>
+                    <option value="eletro-maiores">Eletrodomésticos Maiores</option>
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <label for="precoFiltro" class="form-label"
-                    >Faixa de Preço:</label
-                  >
+                  <label for="precoFiltro" class="form-label">Faixa de Preço:</label>
                   <select id="precoFiltro" class="form-select">
                     <option value="todos" selected>Todos</option>
                     <option value="ate200">Até R$ 200</option>
@@ -637,411 +636,290 @@
               </div>
             </div>
             <div class="card-presentes row g-3" id="presentesContainer">
-              <!-- Card 1 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="eletrodomesticos"
-                data-preco="600"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Cafeteira_Nespresso_Essenza_Mini.jpg"
-                    class="card-img-top"
-                    alt="Cafeteira Nespresso Essenza Mini"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Cafeteira Nespresso Essenza Mini</h5>
-                    <p class="card-text">R$ 600,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/2bzM1YZ"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
+              <div class="card-presentes row g-3" id="presentesContainer">
+                <!-- Card 1: Cafeteira Nespresso Essenza Mini -->
+                <div class="col-md-4 card-item" data-categoria="eletrodomesticos" data-preco="600">
+                  <div class="card">
+                    <img src="imagens/cards/Cafeteira_Nespresso_Essenza_Mini.jpg" class="card-img-top" alt="Cafeteira Nespresso Essenza Mini" />
+                    <div class="card-body">
+                      <h5 class="card-title">Cafeteira Nespresso Essenza Mini</h5>
+                      <p class="card-text">R$ 600,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/2bzM1YZ" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 2: Liquidificador Osterizer Clássico -->
+                <div class="col-md-4 card-item" data-categoria="utensilios" data-preco="400">
+                  <div class="card">
+                    <img src="imagens/cards/Liquidificador_Osterizer_Classico.webp" class="card-img-top" alt="Liquidificador Osterizer Clássico" />
+                    <div class="card-body">
+                      <h5 class="card-title">Liquidificador Osterizer Clássico</h5>
+                      <p class="card-text">R$ 400,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/2gqpmbj" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 3: Faqueiro Tramontina Búzios 24 Peças -->
+                <div class="col-md-4 card-item" data-categoria="utensilios" data-preco="150">
+                  <div class="card">
+                    <img src="imagens/cards/Faqueiro_Tramontina_Buzios_24_Pecas.jpg" class="card-img-top" alt="Faqueiro Tramontina Búzios 24 Peças" />
+                    <div class="card-body">
+                      <h5 class="card-title">Faqueiro Tramontina Búzios 24 Peças</h5>
+                      <p class="card-text">R$ 150,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1hxrWYg" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 4: Jogo de Lençol Buddemeyer King 4 Peças -->
+                <div class="col-md-4 card-item" data-categoria="cama-mesa-banho" data-preco="350">
+                  <div class="card">
+                    <img src="imagens/cards/Jogo_de_Lencol_Buddemeyer_King_4_Pecas.webp" class="card-img-top" alt="Jogo de Lençol Buddemeyer King 4 Peças" />
+                    <div class="card-body">
+                      <h5 class="card-title">Jogo de Lençol Buddemeyer King 4 Peças</h5>
+                      <p class="card-text">R$ 350,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/2CeVuKB" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 5: Relógio de Parede Herweg Vintage -->
+                <div class="col-md-4 card-item" data-categoria="decoracao" data-preco="150">
+                  <div class="card">
+                    <img src="imagens/cards/Relogio_de_Parede_Herweg_Vintage.webp" class="card-img-top" alt="Relógio de Parede Herweg Vintage" />
+                    <div class="card-body">
+                      <h5 class="card-title">Relógio de Parede Herweg Vintage</h5>
+                      <p class="card-text">R$ 150,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1hxrWYg" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 6: Geladeira Brastemp Frost Free Duplex 375L -->
+                <div class="col-md-4 card-item" data-categoria="eletro-maiores" data-preco="3000">
+                  <div class="card">
+                    <img src="imagens/cards/Geladeira_Brastemp_Frost_Free_Duplex_375L.avif" class="card-img-top" alt="Geladeira Brastemp Frost Free Duplex 375L" />
+                    <div class="card-body">
+                      <h5 class="card-title">Geladeira Brastemp Frost Free Duplex 375L</h5>
+                      <p class="card-text">R$ 3.000,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1jTvq7q" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 7: Porta-Retratos Elegante -->
+                <div class="col-md-4 card-item" data-categoria="decoracao" data-preco="40">
+                  <div class="card">
+                    <img src="imagens/cards/Porta_Retratos_Elegante.webp" class="card-img-top" alt="Porta-Retratos Elegante" />
+                    <div class="card-body">
+                      <h5 class="card-title">Porta-Retratos Elegante</h5>
+                      <p class="card-text">R$ 40,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1gY8bAv" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 8: Conjunto de Copos -->
+                <div class="col-md-4 card-item" data-categoria="utensilios" data-preco="30">
+                  <div class="card">
+                    <img src="imagens/cards/Conjunto_de_Copos.webp" class="card-img-top" alt="Conjunto de Copos" />
+                    <div class="card-body">
+                      <h5 class="card-title">Conjunto de Copos</h5>
+                      <p class="card-text">R$ 30,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/2sugPkQ" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 9: Toalha de Rosto -->
+                <div class="col-md-4 card-item" data-categoria="cama-mesa-banho" data-preco="25">
+                  <div class="card">
+                    <img src="imagens/cards/Toalha_de_Rosto.webp" class="card-img-top" alt="Toalha de Rosto" />
+                    <div class="card-body">
+                      <h5 class="card-title">Toalha de Rosto</h5>
+                      <p class="card-text">R$ 25,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/2FfwAZk" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 10: Chaleira Elétrica -->
+                <div class="col-md-4 card-item" data-categoria="eletrodomesticos" data-preco="120">
+                  <div class="card">
+                    <img src="imagens/cards/Chaleira_Eletrica.webp" class="card-img-top" alt="Chaleira Elétrica" />
+                    <div class="card-body">
+                      <h5 class="card-title">Chaleira Elétrica</h5>
+                      <p class="card-text">R$ 120,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/2SypmG5" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 11: Máquina de Lavar Samsung EcoBubble 11kg -->
+                <div class="col-md-4 card-item" data-categoria="eletro-maiores" data-preco="2500">
+                  <div class="card">
+                    <img src="imagens/cards/Maquina_de_Lavar_Samsung_EcoBubble_11kg.webp" class="card-img-top" alt="Máquina de Lavar Samsung EcoBubble 11kg" />
+                    <div class="card-body">
+                      <h5 class="card-title">Máquina de Lavar Samsung EcoBubble 11kg</h5>
+                      <p class="card-text">R$ 2.500,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1brq4i2" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 12: Jogo de Talheres Inox -->
+                <div class="col-md-4 card-item" data-categoria="utensilios" data-preco="80">
+                  <div class="card">
+                    <img src="imagens/cards/Jogo_de_Talheres_Inox.webp" class="card-img-top" alt="Jogo de Talheres Inox" />
+                    <div class="card-body">
+                      <h5 class="card-title">Jogo de Talheres Inox</h5>
+                      <p class="card-text">R$ 80,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/21kgWyc" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 13: Quadro Decorativo Moderno -->
+                <div class="col-md-4 card-item" data-categoria="decoracao" data-preco="300">
+                  <div class="card">
+                    <img src="imagens/cards/Quadro_Decorativo_Moderno.webp" class="card-img-top" alt="Quadro Decorativo Moderno" />
+                    <div class="card-body">
+                      <h5 class="card-title">Quadro Decorativo Moderno</h5>
+                      <p class="card-text">R$ 300,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/28HQYPm" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 14: Jogo de Panelas Tramontina Solar Inox -->
+                <div class="col-md-4 card-item" data-categoria="utensilios" data-preco="800">
+                  <div class="card">
+                    <img src="imagens/cards/Jogo_de_Panelas_Tramontina_Solar_Inox.webp" class="card-img-top" alt="Jogo de Panelas Tramontina Solar Inox" />
+                    <div class="card-body">
+                      <h5 class="card-title">Jogo de Panelas Tramontina Solar Inox</h5>
+                      <p class="card-text">R$ 800,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1b37Gme" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 15: Forno de Micro-ondas Panasonic 32L -->
+                <div class="col-md-4 card-item" data-categoria="eletrodomesticos" data-preco="600">
+                  <div class="card">
+                    <img src="imagens/cards/Forno_de_Microondas_Panasonic_32L.webp" class="card-img-top" alt="Forno de Micro-ondas Panasonic 32L" />
+                    <div class="card-body">
+                      <h5 class="card-title">Forno de Micro-ondas Panasonic 32L</h5>
+                      <p class="card-text">R$ 600,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1w9VgJ3" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- NOVOS ITENS ACRESCENTADOS -->
+                <!-- Card 16: Airfryer -->
+                <div class="col-md-4 card-item" data-categoria="eletrodomesticos" data-preco="350">
+                  <div class="card">
+                    <img src="imagens/cards/Airfryer.jpeg" class="card-img-top" alt="Airfryer" />
+                    <div class="card-body">
+                      <h5 class="card-title">Airfryer</h5>
+                      <p class="card-text">R$ 350,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/2CeVuKB" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 17: Guarda-roupas -->
+                <div class="col-md-4 card-item" data-categoria="eletro-maiores" data-preco="1200">
+                  <div class="card">
+                    <img src="imagens/cards/GuardaRoupa.webp" class="card-img-top" alt="Guarda-roupas" />
+                    <div class="card-body">
+                      <h5 class="card-title">Guarda-roupas</h5>
+                      <p class="card-text">R$ 1.200,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="LINK_A_SER_CONFIGURADO" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 18: Suqueira -->
+                <div class="col-md-4 card-item" data-categoria="utensilios" data-preco="500">
+                  <div class="card">
+                    <img src="imagens/cards/Suqueira.webp" class="card-img-top" alt="Suqueira" />
+                    <div class="card-body">
+                      <h5 class="card-title">Suqueira</h5>
+                      <p class="card-text">R$ 500,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="LINK_A_SER_CONFIGURADO" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 19: Cama Box -->
+                <div class="col-md-4 card-item" data-categoria="cama-mesa-banho" data-preco="1500">
+                  <div class="card">
+                    <img src="imagens/cards/CamaBox.webp" class="card-img-top" alt="Cama Box" />
+                    <div class="card-body">
+                      <h5 class="card-title">Cama Box</h5>
+                      <p class="card-text">R$ 1.500,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="LINK_A_SER_CONFIGURADO" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 20: Armário de Cozinha -->
+                <div class="col-md-4 card-item" data-categoria="eletro-maiores" data-preco="600">
+                  <div class="card">
+                    <img src="imagens/cards/ArmarioCozinha.webp" class="card-img-top" alt="Armário de Cozinha" />
+                    <div class="card-body">
+                      <h5 class="card-title">Armário de Cozinha</h5>
+                      <p class="card-text">R$ 600,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1w9VgJ3" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 21: Sofá -->
+                <div class="col-md-4 card-item" data-categoria="eletro-maiores" data-preco="2500">
+                  <div class="card">
+                    <img src="imagens/cards/Sofa.webp" class="card-img-top" alt="Sofá" />
+                    <div class="card-body">
+                      <h5 class="card-title">Sofá</h5>
+                      <p class="card-text">R$ 2.500,00</p>
+                      <!-- Produtos com preço 2500 compartilharão o mesmo link: 
+                           já que o card 11 (Máquina de Lavar Samsung EcoBubble 11kg) possui esse link -->
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1brq4i2" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 22: Televisão -->
+                <div class="col-md-4 card-item" data-categoria="eletrodomesticos" data-preco="1800">
+                  <div class="card">
+                    <img src="imagens/cards/Televisao.avif" class="card-img-top" alt="Televisão" />
+                    <div class="card-body">
+                      <h5 class="card-title">Televisão</h5>
+                      <p class="card-text">R$ 1.800,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="LINK_A_SER_CONFIGURADO" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 23: Filmagem da Cerimônia -->
+                <div class="col-md-4 card-item" data-categoria="decoracao" data-preco="2500">
+                  <div class="card">
+                    <img src="imagens/cards/FilmagemCerimonia.jpeg" class="card-img-top" alt="Filmagem da Cerimônia" />
+                    <div class="card-body">
+                      <h5 class="card-title">Filmagem da Cerimônia</h5>
+                      <p class="card-text">R$ 2.500,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="https://mpago.li/1brq4i2" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 24: Fotos da Cerimônia -->
+                <div class="col-md-4 card-item" data-categoria="decoracao" data-preco="2000">
+                  <div class="card">
+                    <img src="imagens/cards/FotosCerimonia.jpeg" class="card-img-top" alt="Fotos da Cerimônia" />
+                    <div class="card-body">
+                      <h5 class="card-title">Fotos da Cerimônia</h5>
+                      <p class="card-text">R$ 2.000,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="LINK_A_SER_CONFIGURADO" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card 25: Buffet -->
+                <div class="col-md-4 card-item" data-categoria="decoracao" data-preco="4000">
+                  <div class="card">
+                    <img src="imagens/cards/Buffet.jpeg" class="card-img-top" alt="Buffet" />
+                    <div class="card-body">
+                      <h5 class="card-title">Buffet</h5>
+                      <p class="card-text">R$ 4.000,00</p>
+                      <a href="#" class="btn btn-primary payment-link" data-payment-url="LINK_A_SER_CONFIGURADO" data-bs-toggle="modal" data-bs-target="#modalPagamento">Presentear</a>
+                    </div>
                   </div>
                 </div>
               </div>
-              <!-- Card 2 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="utensilios"
-                data-preco="400"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Liquidificador_Osterizer_Classico.webp"
-                    class="card-img-top"
-                    alt="Liquidificador Osterizer Clássico"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Liquidificador Osterizer Clássico
-                    </h5>
-                    <p class="card-text">R$ 400,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/2gqpmbj"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 3 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="utensilios"
-                data-preco="150"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Faqueiro_Tramontina_Buzios_24_Pecas.jpg"
-                    class="card-img-top"
-                    alt="Faqueiro Tramontina Búzios 24 Peças"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Faqueiro Tramontina Búzios 24 Peças
-                    </h5>
-                    <p class="card-text">R$ 150,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/1hxrWYg"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 4 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="cama-mesa-banho"
-                data-preco="350"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Jogo_de_Lencol_Buddemeyer_King_4_Pecas.webp"
-                    class="card-img-top"
-                    alt="Jogo de Lençol Buddemeyer King 4 Peças"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Jogo de Lençol Buddemeyer King 4 Peças
-                    </h5>
-                    <p class="card-text">R$ 350,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/2CeVuKB"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 5 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="decoracao"
-                data-preco="150"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Relogio_de_Parede_Herweg_Vintage.webp"
-                    class="card-img-top"
-                    alt="Relógio de Parede Herweg Vintage"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Relógio de Parede Herweg Vintage</h5>
-                    <p class="card-text">R$ 150,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/1hxrWYg"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 6 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="eletro-maiores"
-                data-preco="3000"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Geladeira_Brastemp_Frost_Free_Duplex_375L.avif"
-                    class="card-img-top"
-                    alt="Geladeira Brastemp Frost Free Duplex 375L"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Geladeira Brastemp Frost Free Duplex 375L
-                    </h5>
-                    <p class="card-text">R$ 3.000,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/1jTvq7q"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 7 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="decoracao"
-                data-preco="40"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Porta_Retratos_Elegante.webp"
-                    class="card-img-top"
-                    alt="Porta-Retratos Elegante"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Porta-Retratos Elegante</h5>
-                    <p class="card-text">R$ 40,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/1gY8bAv"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 8 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="utensilios"
-                data-preco="30"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Conjunto_de_Copos.webp"
-                    class="card-img-top"
-                    alt="Conjunto de Copos"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Conjunto de Copos</h5>
-                    <p class="card-text">R$ 30,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/2sugPkQ"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 9 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="cama-mesa-banho"
-                data-preco="25"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Toalha_de_Rosto.webp"
-                    class="card-img-top"
-                    alt="Toalha de Rosto"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Toalha de Rosto</h5>
-                    <p class="card-text">R$ 25,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/2FfwAZk"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 10 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="eletrodomesticos"
-                data-preco="120"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Chaleira_Eletrica.webp"
-                    class="card-img-top"
-                    alt="Chaleira Elétrica"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Chaleira Elétrica</h5>
-                    <p class="card-text">R$ 120,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/2SypmG5"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 11 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="eletro-maiores"
-                data-preco="2500"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Maquina_de_Lavar_Samsung_EcoBubble_11kg.webp"
-                    class="card-img-top"
-                    alt="Máquina de Lavar Samsung EcoBubble 11kg"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Máquina de Lavar Samsung EcoBubble 11kg
-                    </h5>
-                    <p class="card-text">R$ 2.500,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/1brq4i2"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 12 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="utensilios"
-                data-preco="80"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Jogo_de_Talheres_Inox.webp"
-                    class="card-img-top"
-                    alt="Jogo de Talheres Inox"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Jogo de Talheres Inox</h5>
-                    <p class="card-text">R$ 80,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/21kgWyc"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 13 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="decoracao"
-                data-preco="300"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Quadro_Decorativo_Moderno.webp"
-                    class="card-img-top"
-                    alt="Quadro Decorativo Moderno"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Quadro Decorativo Moderno</h5>
-                    <p class="card-text">R$ 300,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/28HQYPm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 14 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="utensilios"
-                data-preco="800"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Jogo_de_Panelas_Tramontina_Solar_Inox.webp"
-                    class="card-img-top"
-                    alt="Jogo de Panelas Tramontina Solar Inox"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Jogo de Panelas Tramontina Solar Inox
-                    </h5>
-                    <p class="card-text">R$ 800,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/1b37Gme"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Card 15 -->
-              <div
-                class="col-md-4 card-item"
-                data-categoria="eletrodomesticos"
-                data-preco="600"
-              >
-                <div class="card">
-                  <img
-                    src="imagens/cards/Forno_de_Microondas_Panasonic_32L.webp"
-                    class="card-img-top"
-                    alt="Forno de Micro-ondas Panasonic 32L"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      Forno de Micro-ondas Panasonic 32L
-                    </h5>
-                    <p class="card-text">R$ 600,00</p>
-                    <a
-                      href="#"
-                      class="btn btn-primary payment-link"
-                      data-payment-url="https://mpago.li/1w9VgJ3"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalPagamento"
-                      >Presentear</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+              
+              
+            </div> <!-- Fim de #presentesContainer -->
           </div>
         </div>
       </div>
@@ -1159,76 +1037,6 @@
       }
 
       setInterval(criarPetala, 300);
-
-      // Filtro para os cards de presentes:
-      // Se a faixa de preço selecionada não for "todos", ignora a categoria e filtra apenas por preço.
-      // Caso contrário, filtra utilizando a categoria selecionada.
-      document
-        .getElementById("categoriaFiltro")
-        .addEventListener("change", filterCards);
-      document
-        .getElementById("precoFiltro")
-        .addEventListener("change", filterCards);
-
-      function filterCards() {
-        var categoria = document.getElementById("categoriaFiltro").value;
-        var preco = document.getElementById("precoFiltro").value;
-        var cards = document.querySelectorAll(".card-item");
-
-        cards.forEach(function (card) {
-          var cardPreco = parseFloat(card.getAttribute("data-preco"));
-
-          if (preco !== "todos") {
-            var precoMatch = false;
-
-            if (preco === "ate200" && cardPreco <= 200) {
-              precoMatch = true;
-            } else if (
-              preco === "201-500" &&
-              cardPreco > 200 &&
-              cardPreco <= 500
-            ) {
-              precoMatch = true;
-            } else if (preco === "acima500" && cardPreco > 500) {
-              precoMatch = true;
-            }
-
-            card.style.display = precoMatch ? "block" : "none";
-          } else {
-            // Se a faixa de preço for "todos", aplica filtro por categoria
-            var cardCategoria = card.getAttribute("data-categoria");
-            var categoriaMatch =
-              categoria === "todos" || cardCategoria === categoria;
-            card.style.display = categoriaMatch ? "block" : "none";
-          }
-        });
-      }
-
-      // Configura os links de pagamento para abrirem o modal com o iframe
-      document.querySelectorAll(".payment-link").forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const url = this.getAttribute("data-payment-url");
-          document.getElementById("paymentIframe").src = url;
-        });
-      });
-
-      // Limpa o iframe de pagamento quando o modal de pagamento é fechado
-      var modalPagamentoEl = document.getElementById("modalPagamento");
-      modalPagamentoEl.addEventListener("hidden.bs.modal", function () {
-        document.getElementById("paymentIframe").src = "";
-      });
-
-      // Adiciona a função de abrir a imagem ampliada ao clicar nas imagens dos produtos
-      document.querySelectorAll("#presentesContainer .card-img-top").forEach((img) => {
-        img.style.cursor = "pointer";
-        img.addEventListener("click", function () {
-          const src = this.getAttribute("src");
-          document.getElementById("imagemAmpliada").setAttribute("src", src);
-          var modalImg = new bootstrap.Modal(document.getElementById("modalImagem"));
-          modalImg.show();
-        });
-      });
     </script>
   </body>
 </html>
