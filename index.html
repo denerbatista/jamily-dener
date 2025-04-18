@@ -845,7 +845,7 @@
         colorLight: "#fff",
       });
       function copiarPix() {
-        const pixKey = document.getElementById("pix-key").textContent.replace(/\s/g, "");
+        const pixKey = document.getElementById("pix-key").textContent;
         navigator.clipboard.writeText(pixKey).then(() => {
           alert("Chave Pix copiada com sucesso!");
         });
